@@ -211,6 +211,9 @@ RelayRConnection = (function() {
 		},
 		callServer: function(r, f, a) {
 			transport[web.t()].send(JSON.stringify({ S: true, C: transport.ConnectionId, R: r, M: f, A: a}));
+		},
+		getConnectionId: function() {
+			return transport.ConnectionId;
 		}
 	};
 })();
