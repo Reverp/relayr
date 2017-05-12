@@ -329,3 +329,8 @@ func (e *Exchange) addToGroup(group, connectionID string) {
 		e.groups[group] = append(e.groups[group], e.getClientByConnectionID(connectionID))
 	}
 }
+
+// GetGroupUserCount returns the amount of existing users in the group with the specified name
+func (e *Exchange) GetGroupUserCount(groupName string) int {
+	return len(e.groups[groupName])
+}
